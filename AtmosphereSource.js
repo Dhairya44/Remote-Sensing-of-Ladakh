@@ -1,12 +1,13 @@
 /*
 
-Legend
-Layers
-Split Panel
-Remove checkbox
-Chart
-MinMax Reducer
-TimeSeries
+TODO:
+     Legend
+     Layers
+     Split Panel
+     Remove checkbox
+     Chart
+     MinMax Reducer
+     TimeSeries
 
 */
 
