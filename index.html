@@ -1,57 +1,57 @@
 <html>
     <head>
-        <title>Title</title>
+        <title>Remote Sensing of Ladakh</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="/images/logo.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <style>
-            .center {
-                margin: auto;
-                width: 50%;
-                padding: 20px;
-            }
-            .img1 {
-                margin-top: 100px;
-                margin-left: -400px;
-            }
-            .img2 {
-                margin-top: -8px;
-                margin-right: 75px;
-            }
-            .txt1 {
-                margin-top: 50px;
-                margin-bottom: 25p;
-                color: aliceblue;
-                padding: 10px;
-                margin-left: 300px;
-            }
-            .txt2 {
-                margin-top: 50px;
-                margin-bottom: 25p;
-                color: aliceblue;
-                padding: 10px;
-                margin-right: 350px;
-            }
-            a {
-                color: aliceblue;
-            }
-            a:hover {
-                color: aliceblue;
-            }
-        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+        
     </head>
     <body style="background-color: black;">
-        <div class="container center">
-            <h4 class="display-4" style="color: grey; padding: 10px;">Remote Sensing of Ladakh</h4>
-            <p style="color: grey;">Provided below are links to the apps created using Google Earth Engine for the purpose of visualizing and studying satellite data for the Ladakh Region of India</p>
+        <div class="container  headContainer">
+            <div class="headContainerLeft">
+                <h4 class="display-4 heading" style="color: #2ea3f2;">Remote Sensing of Ladakh</h4>
+                <p class="headingText" style="color: white;">Provided below are links to the apps created using Google Earth Engine for the purpose of visualizing and studying satellite data for the Ladakh Region of India</p>
+                <div style="display: flex; justify-content: space-evenly;">
+                    <div class="button" onclick="location.href='https://dhairyaagrawal.users.earthengine.app/view/ladakh-atmosphere'">Atmosphere</div>
+                    <div class="button" onclick="location.href='https://shreyasketkar.users.earthengine.app/view/ladakh-water'">Water</div>
+                </div>
+            </div>
+            <div class="headContainerRight">
+                <img src="/images/logo.png" alt="IIRS" class="headingImg"/>
+            </div>
+            
         </div>
-        <div>
+        <div class="cards_outer">
+            <div class="card" style="width: 30vw;">
+                <img class="card-img-top" src="/images/atmosphere.jpg " alt="Card image cap" >
+                <div class="card-body">
+                  <h5 class="card-title">Atmosphere</h5>
+                  <p class="card-text">Shows important parameters related to atmosphere such as cloud cover, climate, and concentration of different atmospheric pollutants near the region of Ladakh</p>
+                  <a href="https://dhairyaagrawal.users.earthengine.app/view/ladakh-atmosphere" class="btn btn-primary">Go to App</a>
+                </div>
+              </div>
+              <div class="card" style="width: 30vw;">
+                <img class="card-img-top" src="/images/water.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Water</h5>
+                  <p class="card-text">Shows key parameters related to water such as Rainfall, Surface Water , Evapotranspiration and Runoff around the region of Ladakh</p>
+                  <a href="https://shreyasketkar.users.earthengine.app/view/ladakh-water" class="btn btn-primary">Go to App</a>
+                </div>
+              </div>
+        </div>
+
+        <!-- <div>
             <h3 class="txt1 float-left"><a href="https://dhairyaagrawal.users.earthengine.app/view/ladakh-atmosphere"><u>Atmosphere</u></a></h3>
             <h3 class="txt2 float-right"><a href="https://shreyasketkar.users.earthengine.app/view/ladakh-water"><u>Water</u></a></h3>
         </div>
         <div class="img">
             <a href="https://dhairyaagrawal.users.earthengine.app/view/ladakh-atmosphere"><img class="rounded float-left img1" src="/images/atmosphere.jpg" alt="Atmosphere" style="padding: 10px;" width="40%" height="30%"/></a>
             <a href="https://shreyasketkar.users.earthengine.app/view/ladakh-water"><img class="rounded float-right img2" src="/images/water.jpg" alt="Water" style="padding: 10px;" width="40%" height="30%"/></a>
-        </div>
+        </div> -->
     </body>
 </html>
