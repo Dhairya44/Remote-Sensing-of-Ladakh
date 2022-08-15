@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  * Model *
  *
@@ -38,6 +39,7 @@ var runOffImgInfo =
   bands: {
     "RunOff": {//mm
         bname: "ro",
+        unit:"mm",
         params: {min:0, max:30, palette: [
     '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
     'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
@@ -46,6 +48,7 @@ var runOffImgInfo =
     },
     "Soil Moisture": {//mm
         bname: "soil",
+        unit:"mm",
         params: {min:200, max:800, palette: [
     '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
     'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
@@ -54,6 +57,7 @@ var runOffImgInfo =
     },
     "Soil Water Equivalent": {//mm
         bname: "swe",
+        unit:"mm",
         params: {min:0, max:4000, palette: [
     '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
     'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
@@ -72,16 +76,19 @@ var monthlyRainfallImgInfo =
   bands: {
     "Total Precipitation": {//m
         bname: "total_precipitation",
-        params: {min:0, max:0.002,palette: ['#FFFFFF', '#00FFFF', '#0080FF', '#DA00FF', '#FFA400', '#FF0000']}
+        unit:"m",
+        params: {min:0, max:0.003,palette: ['#FFFFFF', '#00FFFF', '#0080FF', '#DA00FF', '#FFA400', '#FF0000']}
     },
         "Surface Pressure": {//pa
         bname: "surface_pressure",
+        unit:"pa",
         params: {min:55000, max:75000,palette: [
     '#01FFFF', '#058BFF', '#0600FF', '#DF00FF', '#FF00FF', '#FF8C00', '#FF8C00'
   ]}
     },
         "Sea level Pressure": {//pa
         bname: "mean_sea_level_pressure",
+        unit:"pa",
         params: {min:102000, max:103000, palette: [
     '#01FFFF', '#058BFF', '#0600FF', '#DF00FF', '#FF00FF', '#FF8C00', '#FF8C00'
   ]}
@@ -103,6 +110,7 @@ var monthlyRainfallImgInfo =
     
     "Gross Primary Product": {//gC m-2 d-1
       bname: "GPP",
+      unit:"gC m-2 d-1",
       params: {min:0, max:2,palette: [
     'a50026', 'd73027', 'f46d43', 'fdae61', 'fee08b', 'ffffbf',
     'd9ef8b', 'a6d96a', '66bd63', '1a9850', '006837',
@@ -110,6 +118,7 @@ var monthlyRainfallImgInfo =
     },
     "Vegetation Transpiration": {	//mm d-1
       bname: "Ec",
+      unit:"mm d-1",
       params: {min:0, max:0.5,palette: [
     'a50026', 'd73027', 'f46d43', 'fdae61', 'fee08b', 'ffffbf',
     'd9ef8b', 'a6d96a', '66bd63', '1a9850', '006837',
@@ -117,6 +126,7 @@ var monthlyRainfallImgInfo =
     },
     "Soil Evaporation": {//	mm d-1
       bname: "Es",
+      unit:"mm d-1",
       params: {min:0, max:2,palette: [
     'a50026', 'd73027', 'f46d43', 'fdae61', 'fee08b', 'ffffbf',
     'd9ef8b', 'a6d96a', '66bd63', '1a9850', '006837',
@@ -124,6 +134,7 @@ var monthlyRainfallImgInfo =
     },
     "Water Evaporation": {//mm d-1
       bname: "GPP",
+      unit:"mm d-1",
       params: {min:0, max:2,palette: [
     'a50026', 'd73027', 'f46d43', 'fdae61', 'fee08b', 'ffffbf',
     'd9ef8b', 'a6d96a', '66bd63', '1a9850', '006837',
@@ -143,6 +154,7 @@ var monthlyEvaporationImgInfo =
   bands: {
     "Vapour Pressure": {//kpa
         bname: "swe",
+        unit:"kpa",
         params: {min:50, max:4749, palette: [
     '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
     'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
@@ -151,6 +163,7 @@ var monthlyEvaporationImgInfo =
     },
     "Vapour Pressure Deficit": {//kpa
         bname: "vpd",
+        unit:"kpa",
         params: {min:0, max:113, palette: [
     '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
     'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
@@ -159,6 +172,7 @@ var monthlyEvaporationImgInfo =
     },
     "Climate Water Deficit": {//mm
         bname: "def",
+        unit:"mm",
         params: {min:0, max:400, palette: [
     '1a3678', '2955bc', '5699ff', '8dbae9', 'acd1ff', 'caebff', 'e5f9ff',
     'fdffb4', 'ffe6a2', 'ffc969', 'ffa12d', 'ff7c1f', 'ca531a', 'ff0000',
@@ -177,12 +191,12 @@ var monthlyEvaporationImgInfo =
  
    
   col: evapoTranspiration,
-  info: evapoTranspirationImgInfo
+  info:  evapoTranspirationImgInfo
   
 }
 
 var currMap = {};
-
+ var curButton;
 
 
 
@@ -210,6 +224,7 @@ selectYear.slider = ui.Slider(
 });
 
 
+
 var selectBand = {}
 var checkBox={};
 
@@ -224,6 +239,7 @@ var labelPanel=ui.Panel({
     widgets:[selectYear.label,selectYear.slider],
    layout: ui.Panel.Layout.flow('vertical'),
 })
+
 var roiPanel=ui.Panel({
   widgets:[checkBox.roi],
    layout: ui.Panel.Layout.flow('vertical'),
@@ -304,32 +320,21 @@ legend.labelPanel = ui.Panel({
 });
 legend.panel = ui.Panel([legend.title, legend.colorbar, legend.labelPanel]);
 
- var legend2 = {}
- legend2.title = ui.Label();
- legend2.colorbar = ui.Thumbnail(ee.Image.pixelLonLat().select(0));
- legend2.leftLabel = ui.Label('[min]');
- legend2.centerLabel = ui.Label();
- legend2.rightLabel = ui.Label('[max]');
- legend2.labelPanel = ui.Panel({
-   widgets: [legend2.leftLabel,legend2.centerLabel,legend2.rightLabel],
-   layout: ui.Panel.Layout.flow('horizontal')
- });
- 
 
 
 var bottomPanel = ui.Label({ value: "Earth Engine App to Visualize important parameters related to Water near the region of Ladakh",style: {margin: '10px', fontSize: '16px',  fontWeight: '70'}
 });
- var rightMapSelectYear = {}
- rightMapSelectYear.label = ui.Label('Select Date');
- rightMapSelectYear.dateSlider = ui.DateSlider({
-   start: ee.Date(currData.info.startYear),  
-   end: ee.Date(Date.now()),
-   period: 365,
-   onChange: updateRightMap
- });
- var rightMapPanel = ui.Panel([rightMapSelectYear.label, rightMapSelectYear.dateSlider]);
+// var rightMapSelectYear = {}
+// rightMapSelectYear.label = ui.Label('Select Date');
+// rightMapSelectYear.dateSlider = ui.DateSlider({
+//   start: ee.Date(currData.info.startYear),  
+//   end: ee.Date(Date.now()),
+//   period: 365,
+//   onChange: updateRightMap
+// });
+// var rightMapPanel = ui.Panel([rightMapSelectYear.label, rightMapSelectYear.dateSlider]);
 
- rightMapPanel.style().set({position: 'top-right'});
+// rightMapPanel.style().set({position: 'top-right'});
 /*******************************************************************************
  * Composition *
  ******************************************************************************/
@@ -373,24 +378,6 @@ var dividerStyle =
   height:'4px',
   margin: '15px 0px 15px 0px'
 }
-var ActiveBtnStyle = {
-  width: '100px',
-  color: 'green',
-  fontSize: '2px',
-  fontWeight: '70',
-  margin: '10px 5px 7px 3px',
-  backgroundColor: 'rgba(255, 255, 255, 0)',
-  border:"1px solid grey"
-}
-var BtnStyle = {
-  width: '100px',
-  color: 'black',
-  fontSize: '2px',
-  fontWeight: '70',
-  margin: '10px 5px 7px 3px',
-  backgroundColor: 'rgba(255, 255, 255, 0)',
-  border:"1px solid grey"
-}
 
 
 var cbLayer=
@@ -403,20 +390,20 @@ var cbLayer=
 }
 
 
- rightMapSelectYear.label.style().set({
-   fontSize: '16px',
-   fontWeight: '70',
-   width: '100px',
-   stretch: 'horizontal',
-   margin: '10px 0px 0px 0px'
- });
- rightMapSelectYear.dateSlider.style().set({
-   fontSize: '16px',
-   fontWeight: '70',
-   width: '100px',
-   stretch: 'horizontal',
-   margin: '10px 0px 5px 0px'
- });
+// rightMapSelectYear.label.style().set({
+//   fontSize: '16px',
+//   fontWeight: '70',
+//   width: '100px',
+//   stretch: 'horizontal',
+//   margin: '10px 0px 0px 0px'
+// });
+// rightMapSelectYear.dateSlider.style().set({
+//   fontSize: '16px',
+//   fontWeight: '70',
+//   width: '100px',
+//   stretch: 'horizontal',
+//   margin: '10px 0px 5px 0px'
+// });
 selectYear.label.style().set
 ({
   fontSize: '15px',
@@ -488,8 +475,8 @@ var ActiveBtn2 = {
   fontSize: '14px',
   fontWeight: '70',
   margin: '10px 5px 10px 38px',
-  backgroundColor: '#E0FFFF',
-  border:"1px solid rgb(242, 223, 58)"
+  //backgroundColor: '#E0FFFF',
+ // border:"1px solid rgb(242, 223, 58)"
   
 }
 
@@ -500,7 +487,7 @@ var BtnStyle2 = {
   fontSize: '14px',
   fontWeight: '70',
   margin: '10px 5px 10px 38px',
-  backgroundColor: '#E0FFFF',
+  //backgroundColor: '#E0FFFF',
 
    
 }
@@ -526,12 +513,12 @@ var surfaceWater = {
 }
 var ActiveSurfaceWater = {
   width: '120px',
-  color: 'black',
+  color: '#00BFFF',
   fontSize: '14px',
   fontWeight: '70',
   margin: '0px 5px 20px 0px',
    backgroundColor: '#E0FFFF',
-  border:"1px solid rgb(242, 223, 58)"
+  //border:"1px solid rgb(242, 223, 58)"
 
    
 }
@@ -560,19 +547,6 @@ legend.rightLabel.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
 legend.panel.style().set({position: 'bottom-left',width: '200px',  padding: '0px'});
 legend.panel.style().set({backgroundColor: 'rgba(255, 255, 255, 0.5)'});
 legend.labelPanel.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
-legend2.panel = ui.Panel([legend2.title, legend2.colorbar, legend2.labelPanel]);
- legend2.title.style().set({fontWeight: 'bold', fontSize: '12px', color: '383838'});
- legend2.title.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
- legend2.colorbar.style().set({stretch: 'horizontal', margin: '0px 8px', maxHeight: '20px'});
- legend2.leftLabel.style().set({margin: '4px 8px',fontSize: '12px'});
- legend2.leftLabel.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
- legend2.centerLabel.style().set({margin: '4px 8px',fontSize: '12px', textAlign: 'center',stretch: 'horizontal'});
- legend2.centerLabel.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
- legend2.rightLabel.style().set({ margin: '4px 8px',fontSize: '12px'});
- legend2.rightLabel.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
- legend2.panel.style().set({position: 'bottom-left',width: '200px',  padding: '0px'});
- legend2.panel.style().set({backgroundColor: 'rgba(255, 255, 255, 0.5)'});
- legend2.labelPanel.style().set({backgroundColor: 'rgba(255, 255, 255, 0)'});
 BtnPanel3.style().set({
   margin:"10px 10px 20px 10px",
   BackgroundColor:"#E0FFFF",
@@ -589,44 +563,70 @@ bottomPanel.style().set({
 /*******************************************************************************
  * Behaviors *
  ******************************************************************************/
- var curButton="";
+
+ 
+ var l=1;
+ var y;
 function updateData(Btn)
 {
   selectBand.selector.items().reset(Object.keys(currData.info.bands));
   selectBand.selector.setValue(Object.keys(currData.info.bands)[1]);
   curButton=Btn;
+
  
-  var slider = ui.Slider
+  
+     var slider = ui.Slider
   ({
     min: currData.info.startYear,
     max: currData.info.endYear,
     step: 1,
-    onChange: updateMap
+    onChange: updateMap(2)
   });
   slider.style().set(sliderStyle);
    labelPanel.remove(selectYear.slider);
    labelPanel.add(slider);
    selectYear.slider = slider;
 middleLayer[0]=slider;
- // middleLayer.remove(selectYear.slider);
-  //middleLayer.add(slider);
-  //selectYear.slider = slider;
+curButton=Btn;
+Btn.style().set(ActiveBtn2);
+   ui.util.setTimeout(changeFunction,1500);
   
-  runOffBtn.style().set(BtnStyle2);
-  waterSalinityBtn.style().set(BtnStyle2);
-  EvaporationBtn.style().set(BtnStyle2);
-   evapoTranspirationBtn.style().set(BtnStyle2);
-  monthlyRainfallBtn.style().set(BtnStyle2);
-   if(Btn!=null)
-  Btn.style().set(ActiveBtn2);
+ 
+
+  
 } 
-evapoTranspirationBtn.style().set(ActiveBtn2);
-function updateMap()
+
+
+
+
+function changeFunction()
 {
+  
+  curButton.style().set(BtnStyle2);
+}
+
+
+function updateMap(x)
+{
+  
   var year = selectYear.slider.getValue();
-  var curYear=year;
+  var val=year;
+   var curYear=year;
+   var curMonth="01";
+   var curDay="01";
+  
+   
+  //print(ee.Date(val));
+  
+  
+
+    // print(curYear);
+    // print(curMonth);
+  
+
   var band = selectBand.selector.getValue();
-  var img = currData.col.select(currData.info.bands[band].bname).filter(ee.Filter.date(curYear+'-01-01', curYear+'-12-31')).mean().clip(roi);
+  var img;
+  var img = currData.col.select(currData.info.bands[band].bname).filter(ee.Filter.date(curYear+'-'+curMonth+'-01', curYear+'-'+curMonth+'-28')).mean().clip(roi);
 
   
   /*if(boolrightMap === true){
@@ -634,10 +634,21 @@ function updateMap()
     var layer2 = ui.Map.Layer(imgR, currData.info.bands[band].params);
     rightMap.layers().set(0, layer2);
   }*/
-  
    var layer = ui.Map.Layer(img, currData.info.bands[band].params, band + ', ' + year);
-  currMap.m.layers().set(0, layer);
   
+    var found=0;
+   var x=currMap.m.layers();
+  for(var i=0;i<x.length();i++)
+  {
+    if(x.get(i).get("name")==layer.get("name"))
+    found=1;
+  }
+  if(found==0)
+  {
+    currMap.m.layers().set(l, layer);
+ x=currMap.m.layers();
+  l++;
+  }
   desc.setValue(currData.info.desc);
   updateLegend();
 }
@@ -649,11 +660,13 @@ function showRoi()
     map.layers().get(1).setShown(true);
   }else{
     map.layers().get(1).setShown(false);
+    
   }
 }
+
 function updateLegend() 
 {
-  legend.title.setValue(selectBand.selector.getValue());
+  legend.title.setValue(selectBand.selector.getValue() + ' (' + currData.info.bands[selectBand.selector.getValue()].unit + ')');
   var currBand = currData.info.bands[selectBand.selector.getValue()].params;
   legend.colorbar.setParams({bbox: [0, 0, 1, 0.1],dimensions: '100x10',format: 'png', min: 0,max: 1,palette: currBand.palette});
   legend.leftLabel.setValue(currBand.min);
@@ -665,17 +678,7 @@ function updateLegend()
   legend.centerLabel.setValue((x+y)/2);
   legend.rightLabel.setValue(currBand.max);
 }
-function hideLayer()
-{
-  // if(checkBox.layer.getValue()===true)
-  //   {map.layers().get(0).setShown(false);
-  //   map.remove(legend.panel);
-  //   }
-  // else
-  //   {map.layers().get(0).setShown(true);
-  //   map.add(legend.panel);
-  //   }
-}
+
 function updateRunOff()
 {
     currData.col =runOff;
@@ -706,12 +709,7 @@ function updateMonthlyRainfall()
 {
    currData.col = monthlyRainfall;
     currData.info = monthlyRainfallImgInfo;
-  updateData();
-  
-  
-}
-function updateRightMap()
-{
+  updateData(monthlyRainfallBtn);
   
 }
 
@@ -722,9 +720,16 @@ function removeMonthlyRainfall()
  monthlyRainfallBtn.style().set(BtnStyle2);
   chartPanel='#';
 }
+
 var pieChartPanel="#";
+function changeSurfaceStyle()
+{
+   SurfaceWaterBtn.style().set(surfaceWater);
+}
 function updateSurfaceWater()
 {
+  
+
 var gsw = ee.Image('JRC/GSW1_0/GlobalSurfaceWater');
 var occurrence = gsw.select('occurrence');
 var change = gsw.select("change_abs");
@@ -794,9 +799,7 @@ var transition_summary_chart = ui.Chart.feature.byFeature({
     sliceVisibilityThreshold: 0  
   });
 
-if(pieChartPanel==='#' && chartPanel=='#')
- {
-  
+
    //ui.root.remove(map);
    pieChartPanel = ui.Panel(transition_summary_chart);
    pieChartPanel.style().set({
@@ -808,32 +811,68 @@ if(pieChartPanel==='#' && chartPanel=='#')
  
 
 
-map.centerObject(roi, 7.3);
-map.addLayer({
-  eeObject: water_mask,
-  visParams: VIS_WATER_MASK,
-  name: '90% occurrence water mask',
-  shown:false
+currMap.m.centerObject(roi, 7.3);
+   var layer = ui.Map.Layer( water_mask, VIS_WATER_MASK,  '90% occurrence water mask',false);
+   var found=0;
+   var x=currMap.m.layers();
+  for(var i=0;i<x.length();i++)
+  {
+    if(x.get(i).get("name")==layer.get("name"))
+    found=1;
+  }
+  if(found==0)
+  {
+    
+    currMap.m.layers().set(l, layer);
+ x=currMap.m.layers();
+   
+  l++;
+  }
+  found=0;
+  layer = ui.Map.Layer( occurrence.updateMask(occurrence.divide(100)),VIS_OCCURRENCE, "Water Occurrence (1984-2022)",true);
+   for( i=0;i<x.length();i++)
+  {
+     if(x.get(i).get("name")==layer.get("name"))
+    found=1;
+  }
+  if(!found)
+  {
+    currMap.m.layers().set(l, layer);
+  l++;
+  }
+  found=0;
+   layer = ui.Map.Layer( change,VIS_CHANGE,  'occurrence change intensity',true);
+ for( i=0;i<x.length();i++)
+  {
+     if(x.get(i).get("name")==layer.get("name"))
+    found=1;
+  }
+  if(!found)
+  {
+    currMap.m.layers().set(l, layer);
+  l++;
+  }
+  found=0;
+  layer = ui.Map.Layer( {
+    eeObject: transition,
+  name: 'Transition classes (1984-2022)'});
+   for( i=0;i<x.length();i++)
+  {
+     if(x.get(i).get("name")==layer.get("name"))
+    found=1;
+  }
+  if(!found)
+  {
+    currMap.m.layers().set(l, layer);
+   
+  l++;
+  }
  
-});
-map.addLayer({
-  eeObject: occurrence.updateMask(occurrence.divide(100)),
-  name: "Water Occurrence (1984-2022)",
-  visParams: VIS_OCCURRENCE,
 
-});
-map.addLayer({
-  eeObject: change,
-  visParams: VIS_CHANGE,
-  name: 'occurrence change intensity',
- 
-});
-map.addLayer({
-  eeObject: transition,
-  name: 'Transition classes (1984-2022)',
-});
-}
 
+
+    SurfaceWaterBtn.style().set(ActiveSurfaceWater);
+  ui.util.setTimeout(changeSurfaceStyle,2000);
 }
 function removePieChartPanel()
 {
@@ -851,7 +890,13 @@ function clearAllLayers()
    var layer = ui.Map.Layer(roi, {}, 'Ladakh', false, 0.6);
    currMap.m.layers().set(0, layer);
    currMap.m.layers().get(0).setShown(true);
-   var l = 1;
+   runOffBtn.style().set(BtnStyle2);
+   evapoTranspirationBtn.style().set(BtnStyle2);
+   monthlyRainfallBtn.style().set(BtnStyle2);
+   SurfaceWaterBtn.style().set(surfaceWater);
+    EvaporationBtn.style().set(BtnStyle2);
+   
+   l = 1;
 }
 
 
@@ -859,4 +904,4 @@ function clearAllLayers()
  * Initialize *
  ******************************************************************************/
 currMap.m.centerObject(roi, 7.3);
-updateMap();
+updateMap(2);
