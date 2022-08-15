@@ -1,11 +1,8 @@
 /*
-
 ToDo:
-
 Chart
 MinMax Reducer
 TimeSeries
-
 */
 
 /*******************************************************************************
@@ -658,7 +655,7 @@ TimeSeries
    var currBand = currData.info.bands[selectBand.selector.getValue()].params;
    currLegend.colorbar.setParams({bbox: [0, 0, 1, 0.1],dimensions: '100x10',format: 'png', min: 0,max: 1,palette: currBand.palette});
    currLegend.leftLabel.setValue(currBand.min);
-   currLegend.centerLabel.setValue(currBand.max / 2);
+   currLegend.centerLabel.setValue((currBand.max+currBand.min) / 2);
    currLegend.rightLabel.setValue(currBand.max);
  }
  
@@ -674,7 +671,7 @@ TimeSeries
      var currBand = currData.info.bands[rightMapSelectBand.selector.getValue()].params;
      legend3.colorbar.setParams({bbox: [0, 0, 1, 0.1],dimensions: '100x10',format: 'png', min: 0,max: 1,palette: currBand.palette});
      legend3.leftLabel.setValue(currBand.min);
-     legend3.centerLabel.setValue(currBand.max / 2);
+     legend3.centerLabel.setValue((currBand.max+currBand.min) / 2);
      legend3.rightLabel.setValue(currBand.max);
    }
  }
