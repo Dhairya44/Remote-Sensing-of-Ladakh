@@ -1,8 +1,11 @@
 /*
+
 ToDo:
+
 Chart
 MinMax Reducer
 TimeSeries
+
 */
 
 /*******************************************************************************
@@ -19,6 +22,7 @@ TimeSeries
  var sentinelCo = ee.ImageCollection("COPERNICUS/S5P/NRTI/L3_CO");
  
  var no2ImgInfo = {
+   name: "NO2 Dataset",
    startYear: 2018,
    endYear: 2022,
    desc: "Sentinel-5P NO2, This dataset provides near real-time high-resolution imagery of NO2 concentrations.",
@@ -53,6 +57,7 @@ TimeSeries
  };
  
  var so2ImgInfo = {
+   name: "SO2 Dataset",
    startYear: 2018,
    endYear: 2022,
    desc: "Sentinel-5P SO2, This dataset provides near real-time high-resolution imagery of atmospheric sulfur dioxide (SO2) concentrations.",
@@ -79,6 +84,7 @@ TimeSeries
  };
  
  var ccImgInfo = {
+   name: "Cloud Cover Dataset",
    startYear: 2018,
    endYear: 2022,
    desc: "Sentinel-5P Cloud, This dataset provides near real-time high-resolution imagery of cloud parameters.",
@@ -117,6 +123,7 @@ TimeSeries
  }
  
  var climateInfo = {
+   name: "Climate Dataset",
    startYear: 1979,
    endYear: 2020,
    desc: "ERA5 Monthly Aggregates, provides aggregated values for each month for seven ERA5 climate reanalysis parameters.",
@@ -162,6 +169,7 @@ TimeSeries
  }
  
  var ozoneInfo = {
+   name: "Ozone Dataset",
    startYear: 2018,
    endYear: 2022,
    desc: "Sentinel-5P O3, This dataset provides near-real-time high-resolution imagery of total column ozone concentrations.",
@@ -194,6 +202,7 @@ TimeSeries
  }
  
  var coImgInfo = {
+   name: "CO Dataset",
    startYear: 2018,
    endYear: 2022,
    desc: "Sentinel-5P CO, This dataset provides near real-time high-resolution imagery of CO concentrations.",
@@ -616,9 +625,10 @@ TimeSeries
  function updateRightMap(){
    var year = rightMapSelectYear.slider.getValue();
    var band = rightMapSelectBand.selector.getValue();
-   var imgR = currData.col.select(currData.info.bands[band].bname).first().clip(roi);
+   var imgR = currData.col.select(currData.info.bands[band].bname).filter(ee.Filter.date(year+'-01-01', year+'-12-31')).mean().clip(roi)
    var layer = ui.Map.Layer(imgR, currData.info.bands[band].params);
    rightMap.layers().set(0, layer);
+   rightMap.layers().get(0).setShown(true);
    updateRightLegend();
  }
  
@@ -655,7 +665,7 @@ TimeSeries
    var currBand = currData.info.bands[selectBand.selector.getValue()].params;
    currLegend.colorbar.setParams({bbox: [0, 0, 1, 0.1],dimensions: '100x10',format: 'png', min: 0,max: 1,palette: currBand.palette});
    currLegend.leftLabel.setValue(currBand.min);
-   currLegend.centerLabel.setValue((currBand.max+currBand.min) / 2);
+   currLegend.centerLabel.setValue(currBand.max / 2);
    currLegend.rightLabel.setValue(currBand.max);
  }
  
@@ -671,7 +681,7 @@ TimeSeries
      var currBand = currData.info.bands[rightMapSelectBand.selector.getValue()].params;
      legend3.colorbar.setParams({bbox: [0, 0, 1, 0.1],dimensions: '100x10',format: 'png', min: 0,max: 1,palette: currBand.palette});
      legend3.leftLabel.setValue(currBand.min);
-     legend3.centerLabel.setValue((currBand.max+currBand.min) / 2);
+     legend3.centerLabel.setValue(currBand.max / 2);
      legend3.rightLabel.setValue(currBand.max);
    }
  }
