@@ -1,4 +1,3 @@
-
 /*******************************************************************************
  * Model *
  *
@@ -607,7 +606,8 @@ Btn.style().set(ActiveBtn2);
    ui.util.setTimeout(changeFunction,1500);
 } 
 
-function showHideChart() {
+function showHideChart() 
+{
   var shown = true;
   var label = 'Hide chart';
   if (chart.shownButton.getLabel() == 'Hide chart') {
@@ -828,9 +828,10 @@ var transition_summary_chart = ui.Chart.feature.byFeature({
      stretch:"both",
    })
    SurfaceWaterBtn.style().set(ActiveSurfaceWater);
-  chart.container.add(transition_summary_chart);
  
-
+  //chart.container.add(transition_summary_chart);
+ 
+  chart.container.widgets().reset([transition_summary_chart]);
 
 currMap.m.centerObject(roi, 7.3);
    var layer = ui.Map.Layer( water_mask, VIS_WATER_MASK,  '90% occurrence water mask',false);
@@ -890,8 +891,6 @@ currMap.m.centerObject(roi, 7.3);
   }
  
 
-
-
     SurfaceWaterBtn.style().set(ActiveSurfaceWater);
   ui.util.setTimeout(changeSurfaceStyle,2000);
 }
@@ -918,6 +917,7 @@ function clearAllLayers()
    SurfaceWaterBtn.style().set(surfaceWater);
     EvaporationBtn.style().set(BtnStyle2);
    
+   chart.container.widgets().reset([]);
    l = 1;
 }
 
